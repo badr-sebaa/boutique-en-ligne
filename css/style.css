@@ -28,7 +28,7 @@ header.header img{
 nav.nav{
     display: flex;
     list-style: none;
-    color:white;
+    color:rgb(0, 0, 0);
     font-family: 'Audiowide', sans-serif;
     margin-left: 30px;
     align-items:center;
