@@ -1,8 +1,8 @@
 <?php
-require_once 'Config-boutique.php';
-require('articles.php');
+require_once '../model/Config-boutique.php';
+require('../controler/articles.php');
 $user = new articles();
-require('categories.php');
+require('../controler/categories.php');
 $cat = new categories();
 ?>
 <!DOCTYPE html>
