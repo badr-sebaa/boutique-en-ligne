@@ -4,7 +4,7 @@
 	}
 	
 	body {
-	background-image:url('../../img/peakpx\ \(2\).jpg');
+	background-image:url('../img/peakpx\ \(2\).jpg');
 	background-size:100%;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
@@ -12,20 +12,12 @@
 	width:100%;
 	}
 	
-.logo{
-	display: flex;
-	margin-right: 90%;
-	position: relative;
-	width: 10%;
-	height: 20%;
-	text-align: center;
-}
 
 	nav{
 		display: flex;
 		justify-content: flex-end;
 		position: relative;
-		
+		background-color: blue;
 	}
 
 	nav ul{
@@ -154,15 +146,15 @@
 	.item-1 {
 	 z-index: 2;
 	 opacity: 1;
-	 background: url('../../img/NFT.gif');
+	 background: url('../img/NFT.gif');
 	 background-size: cover;
 	}
 	.item-2 {
-	 background: url('../../img/NFT2.gif');
+	 background: url('../img/NFT2.gif');
 	 background-size: cover;
 	}
 	.item-3 {
-	 background: url('../../img/NFT3.gif');
+	 background: url('../img/NFT3.gif');
 	 background-size: cover;
 	}
 	*:target ~ .item-1{
@@ -181,7 +173,7 @@
 	/* Grid */
 	
 	.new-nfts{
-		margin:100px;
+		margin:10x;
 	}
 	
 	.nft-grid{
@@ -193,7 +185,7 @@
 	}
 	
 	.nft-grid1{
-		background-image: url("../../img/fond.jpg");
+		background-image: url("../img/fond.jpg");
 		background-repeat: no-repeat;
 		width: 100%;
 		background-size:cover;
@@ -202,7 +194,7 @@
 		
 	}
 	.nft-grid2{
-		background-image: url("../../img/fond.jpg");
+		background-image: url("../img/fond.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
@@ -210,7 +202,7 @@
 	
 	}
 	.nft-grid3{
-		background-image: url("../../img/fond.jpg");
+		background-image: url("../img/fond.jpg");
 		background-repeat: no-repeat;
 		width: 100%;
 		background-size: cover;

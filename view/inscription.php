@@ -8,7 +8,7 @@
 
     <title>َRegister SCHLASS</title>
 
-    <link rel="stylesheet" href="registertest.css">
+    <link rel="stylesheet" href="CSS/registertest.css">
 
   </head>
 

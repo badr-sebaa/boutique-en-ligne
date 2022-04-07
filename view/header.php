@@ -9,19 +9,18 @@
 
         <div>
 			<nav>
-                <h1>SCHLASS</h1>
-                     <img class="logo" src="./img/log.png" alt="logo">
+                     
 				<ul>
                     <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">SIGN UP</a></li>
+                    onmouseout="StopSound('mySound')" href="view/inscription.php">SIGN UP</a></li>
                      <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">LOGIN</a></li>
+                    onmouseout="StopSound('mySound')" href="view/connexion.php">LOGIN</a></li>
                     <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">CONTACT US</a></li>	
+                    onmouseout="StopSound('mySound')" href="view/contact.php">CONTACT US</a></li>
+                    <li><a onmouseover="PlaySound('mySound')" 
+                    onmouseout="StopSound('mySound')" href="apropos.php">ABOUT-US</a></li>	
                 	<li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">SHOP</a></li>
-                    <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">TEST</a></li>	
+                    onmouseout="StopSound('mySound')" href="#">SHOP</a></li>	
 					<li><a onmouseover="PlaySound('mySound')" 
                     onmouseout="StopSound('mySound')" href="#">HOME</a></li>
 				</ul>

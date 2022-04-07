@@ -3,24 +3,19 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CSS Glitch Effect | Demo 2 | Codrops</title>
-		<meta name="description" content="A glitch effect using CSS animations and clip-path" />
-		<meta name="keywords" content="glitch, effect, css, animations" />
-		<meta name="author" content="Codrops" />
+		<title>SCHLASS | KaibaCorp</title>
+		<meta name="author" content="Kaibacorp" />
 		<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="CSSGlitchEffect-master/css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="CSSGlitchEffect-master/css/demo2.css"/>
+		<link rel="stylesheet" type="text/css" href="view/CSS/base.css"/>
+		<link rel="stylesheet" type="text/css" href="view/CSS/demo2.css"/>
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 		</head>
 			
      
 	<body class="demo-2 loading">
 		
-		<?php include 'header.php'	?>
+		<?php include 'view/header.php'	?>
 
-		<audio autoplay loop>
-			
-			<source src="/img/BLACK OPS 2 ZOMBIES_ OFFICIAL Theme Song.wav" type="audio/wav"></audio>
 	<header> 
 			<div class="content">
 				<div class="glitch">
@@ -34,22 +29,22 @@
 			</div>
 	
 	</header>
-		<script src="CSSGlitchEffect-master/js/imagesloaded.pkgd.min.js"></script>
-		<script src="CSSGlitchEffect-master/js/demo.js"></script>
+		<script src="view/js/imagesloaded.pkgd.min.js"></script>
+		<script src="view/js/demo.js"></script>
 		
 <!-- section service -->
 
 	<section class="services">
 			<div class="service-items">
-				<img src="img/encryption.svg" style="width: 60%; padding:5%;margin: 10%">
+				<img src="view/img/encryption.svg" style="width: 60%; padding:5%;margin: 10%">
 					<p class="service-details">Vos payments sont anonyme et intraçable</p>
 			</div>
 			<div class="service-items">
-				<img src="img/convenience.svg" style="width: 60%; padding: 5%;margin: 10%">
+				<img src="view/img/convenience.svg" style="width: 60%; padding: 5%;margin: 10%">
 					<p class="service-details">Expérience utilisateur familière et pratique</p>
 			</div>
 			<div class="service-items">
-				<img src="img/self-custodial.svg" style="width: 60%; padding: 5%;margin: 10%">
+				<img src="view/img/self-custodial.svg" style="width: 60%; padding: 5%;margin: 10%">
 					<p class="service-details">Auto-conservation : vos clés, votre crypto</p>
 			</div>
 	</section>
@@ -104,20 +99,8 @@
 				</div>
 			</a>
 	</section>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
-	<p>ejz</p>
+
+	<?php include 'view/footer.php'; ?>
 	</body>
 </html>
 
