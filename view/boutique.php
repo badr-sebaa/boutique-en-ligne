@@ -20,89 +20,37 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SCHLASS</title>
-    <link rel="stylesheet" href="boutique.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="CSS/boutique.css">
 </head>
+ <h1 class="heading"> 当社製品 </h1>
+<section class="products" id="products">
 
-<body>
-    <!-- Barre de navigation -->
-    <nav>
-
-    </nav>
-    <!-- Fin de la barre de navigation -->
-
-    <!-- Header -->
-    <header>
-        <h1> 총을 쏘다 </h1>
-    </header>
-    <!-- Fin du header -->
-
-    <!-- Section principale -->
-    <class="card">
-
-        <!-- Toutes les cartes -->
-
-        <?php foreach ($cours as $c) : ?>
-           
-          <div class="shell">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img">
-            <img src="<?= $c['image']?>" alt="Product" class="img-responsive" />
-          </div>
-          <!-- <div class="wsk-cp-text">
-            <div class="category">
-              <span>Ethnic</span>
-            </div> -->
-            <div class="title-product">
-              <h3><?= $c['name']?></h3>
+<div class="box-container">
+ <?php foreach ($cours as $c) : ?>
+    
+     
+        <!-- <div class="col-md-4"> -->
+        <div class="box">
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-eye"></a>
             </div>
-            <div class="description-prod">
-              <p><?= $c['description']?></p>
+            <div class="image">
+                <img src="<?= $c['image']?>" alt="">
             </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price"><?= $c['prix']?></span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+
+            <div class="content">
+                <h3><?= $c['name']?></h3>
+    
+                <div class="price"><?= $c['prix']?></div>
             </div>
-          </div>
         </div>
-      </div>     
-        <?php endforeach; ?>
-        <!-- Fin de toutes les cartes -->
-
-    <!-- Pied de page -->
-    <footer>
-
-    </footer>
-    <!-- Fin du pied de page -->
-</body>
-
+        <!-- </div> -->
+                        
+<?php endforeach; ?>
+</div> 
+    
+   
+</section>
 </html>
-
-<div class="shell">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="wsk-cp-product">
-          <div class="wsk-cp-img">
-            <img src="<?= $c['image']?>" alt="Product" class="img-responsive" />
-          </div>
-          <!-- <div class="wsk-cp-text">
-            <div class="category">
-              <span>Ethnic</span>
-            </div> -->
-            <div class="title-product">
-              <h3><?= $c['name']?></h3>
-            </div>
-            <div class="description-prod">
-              <p><?= $c['description']?></p>
-            </div>
-            <div class="card-footer">
-              <div class="wcf-left"><span class="price"><?= $c['prix']?></span></div>
-              <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
