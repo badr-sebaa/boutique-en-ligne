@@ -1,16 +1,12 @@
 <?php
 session_start(); // Pour récupèrer nos données dans les variables : $_SESSION   
 
-$pdo =  new PDO(
-    'mysql:host=localhost;dbname=boutique_en_ligne.sql',
-    'root',
-    'root'
-);
+require '../model/config.php';
 $req = "SELECT * FROM articles";
-$stmt = $pdo->prepare($req);
+$stmt = $bdd->prepare($req);
 $stmt->execute();
 $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// var_dump($cours);
+
 ?>
 
 <!DOCTYPE html>

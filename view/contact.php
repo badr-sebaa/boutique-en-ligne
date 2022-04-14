@@ -14,7 +14,7 @@
     VOTRE MAIL <input type="mail" name="mail">
     </br>SUJET <input type="text" name="sujet">
     </br><label for="message">Message:</label>
-    <textarea id="w3review" name="message" rows="4" cols="50">
+    <textarea name="message" rows="4" cols="50">
     </textarea>
     </br><input type="submit" name="submit">
 </form>
