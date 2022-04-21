@@ -15,7 +15,7 @@
   <body>
 
 <main>
-<form class="box" action="inscription_traitement.php" method="post">
+<form class="box" action="../controler/inscription_traitement.php" method="post">
 
   <h1>Register</h1>
 
