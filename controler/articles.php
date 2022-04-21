@@ -1,6 +1,6 @@
 <?php
-
-class articles extends DB
+require_once '../model/Config-boutique.php';
+class Articles extends DB
 {
     public $_id;
     public $_name;
@@ -87,30 +87,33 @@ class articles extends DB
         }
     }
 
-    public function Deletearticles()
+    public function getArticlesbyid()
     {
         $userid = $_GET['id'];
         var_dump($_GET);
 
-        $req = $this->db->prepare("DELETE FROM articles  WHERE id = '$userid' ");
-        $req->execute(array());
-
-        echo "Le produit a bien été supprimer";
-
-        header('refresh:2;url=admin.php');
+        $req = $this->db->prepare("SELECT * FROM articles  WHERE id = ? ");
+        $req->execute(array($userid));
+        return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getarticles()
+    public function DeleteArticles()
+    {
+        $userid = $_GET['id'];
+        var_dump($_GET);
+
+        $req = $this->db->prepare("DELETE FROM articles  WHERE id = ? ");
+        $req->execute(array($userid));
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getArticles()
     {
 
-        $check = $this->db->query("SELECT * FROM `articles`");
-        $res = $check->fetchAll(PDO::FETCH_ASSOC);
+        $check = $this->db->prepare("SELECT * FROM `articles`");
+        $check->execute();
+       return $check->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($res as $data) { ?>
-
-            <option value=" <?php echo $data['id']; ?>"> <?php echo $data['name']; ?></option>
-<?php
-        }
     }
 
     
