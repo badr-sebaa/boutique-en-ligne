@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 28 fév. 2022 à 13:40
+-- Généré le : ven. 22 avr. 2022 à 06:49
 -- Version du serveur :  5.7.34
 -- Version de PHP : 8.0.8
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `achats`
+--
+
+CREATE TABLE `achats` (
+  `id` int(11) NOT NULL,
+  `id_article` int(11) NOT NULL,
+  `id_users` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `achats`
+--
+
+INSERT INTO `achats` (`id`, `id_article`, `id_users`, `date`) VALUES
+(3, 6, 4, '2022-04-21 18:58:06');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `articles`
 --
 
@@ -32,9 +52,65 @@ CREATE TABLE `articles` (
   `name` varchar(255) NOT NULL,
   `image` text NOT NULL,
   `description` text NOT NULL,
-  `prix` float NOT NULL,
-  `id_categorie` int(11) NOT NULL
+  `prix` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `articles`
+--
+
+INSERT INTO `articles` (`id`, `name`, `image`, `description`, `prix`) VALUES
+(4, 'firearm', 'img/NFT1.jpg', 'ce produit est un test ', 33),
+(7, 'Molotov c', './img/nft4.JPG', 'molotov', 88),
+(8, 'axe', './img/nft5.JPG', 'axe', 33),
+(9, 'M4', './img/m4.JPG', 'M4', 77),
+(10, 'scout', './img/scout.JPG', 'scout', 33),
+(11, 'Galil', './img/galil.JPG', 'galil', 678),
+(13, 'Mac-10', './img/mac10.JPG', 'mac 10', 55);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `articles_acheter`
+--
+
+CREATE TABLE `articles_acheter` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `image` text NOT NULL,
+  `description` text NOT NULL,
+  `prix` float NOT NULL,
+  `owner` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `articles_acheter`
+--
+
+INSERT INTO `articles_acheter` (`id`, `name`, `image`, `description`, `prix`, `owner`) VALUES
+(6, 'revolver', './img/revolver.JPG', 'marche stp', 55, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cartes`
+--
+
+CREATE TABLE `cartes` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `card_number` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `CVV` varchar(255) NOT NULL,
+  `date_exp` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `cartes`
+--
+
+INSERT INTO `cartes` (`id`, `id_user`, `card_number`, `name`, `CVV`, `date_exp`) VALUES
+(1, 4, '$2y$12$Kr1ox4yyqq6QpZ8JgoVZteEZs7B9f6xUIrVzv0vh.gfz81F6Axq16', '$2y$12$zHlKoH3lFIqtEI4XDPpN8eTvgbKdsV9j1If3SkI/JdmDGZovRezz2', '$2y$12$IY9W1.ND0jiWwzKoWhrO5ezbAR1cMVPt1Cg9O/7VdOlLMLbo99w72', '2025-01-16');
 
 -- --------------------------------------------------------
 
@@ -47,6 +123,16 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`) VALUES
+(3, 'Fusils à pompe'),
+(4, 'Mitraillettes'),
+(5, 'armes de poing'),
+(6, 'fusils d\'assaut');
+
 -- --------------------------------------------------------
 
 --
@@ -56,18 +142,6 @@ CREATE TABLE `categories` (
 CREATE TABLE `droits` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `panier`
---
-
-CREATE TABLE `panier` (
-  `id` int(11) NOT NULL,
-  `id_article` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -102,9 +176,27 @@ INSERT INTO `users` (`id`, `walet`, `lastname`, `firstname`, `email`, `password`
 --
 
 --
+-- Index pour la table `achats`
+--
+ALTER TABLE `achats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `articles`
 --
 ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `articles_acheter`
+--
+ALTER TABLE `articles_acheter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `cartes`
+--
+ALTER TABLE `cartes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -120,12 +212,6 @@ ALTER TABLE `droits`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `panier`
---
-ALTER TABLE `panier`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -136,27 +222,39 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `achats`
+--
+ALTER TABLE `achats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT pour la table `articles_acheter`
+--
+ALTER TABLE `articles_acheter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `cartes`
+--
+ALTER TABLE `cartes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `droits`
 --
 ALTER TABLE `droits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `panier`
---
-ALTER TABLE `panier`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
