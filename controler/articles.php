@@ -1,5 +1,5 @@
 <?php
-require_once '../model/Config-boutique.php';
+
 class Articles extends DB
 {
     public $_id;
@@ -9,6 +9,12 @@ class Articles extends DB
     public $_description;
     private $_Malert;
     private $_Talert;
+    protected $db;
+
+    function __construct(){
+        $this->db = require_once '../model/Config-boutique.php';
+    }
+
 
     public function alerts()
     {
@@ -18,6 +24,42 @@ class Articles extends DB
             echo "<div class='error'>" . $this->_Malert . "</div>";
         }
     }
+
+    public function getAllProducts($produitsParPage,$current_page){
+        // Selection par des produits triés par date
+        $current_page = ($current_page - 1);
+        $offset = ($current_page*$produitsParPage);
+        
+
+        $sql = "SELECT * FROM articles ORDER BY prix DESC LIMIT 0,5";
+        
+    
+        $req = $this->db->prepare("SELECT * FROM articles ORDER BY prix DESC LIMIT 0,5");
+       
+       
+        $req->bindValue(1, ($current_page - 1) * $produitsParPage, PDO::PARAM_INT);
+        $req->bindValue(2, $produitsParPage, PDO::PARAM_INT);
+        $req->execute();
+
+
+        $fetch = $req->fetchAll();
+        // var_dump($fetch);
+        // die;
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $req = $this->db->prepare("SELECT * FROM articles ORDER BY prix DESC LIMIT ?,?");
+        $req->bindValue(1, ($current_page - 1) * $produitsParPage, PDO::PARAM_INT);
+        $req->bindValue(2, $produitsParPage, PDO::PARAM_INT);
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public function totalProducts(){
+
+        return $totalProduit = $this->db->query('SELECT * FROM articles')->rowCount();
+    }
+
 
     public function Creerarticles($name, $prix, $image, $description, $categories)
     {

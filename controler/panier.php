@@ -23,7 +23,7 @@ class Panier{
         if(empty($ids)){
             $products = array();
         }else{
-            $check = $this->bdd->prepare('SELECT id , price FROM products WHERE id IN ('.implode(',',$ids).')');
+            $check = $this->bdd->prepare('SELECT id , price FROM articles WHERE id IN ('.implode(',',$ids).')');
             $products = $check->fetch();
         }
         foreach ($products as $product) {
