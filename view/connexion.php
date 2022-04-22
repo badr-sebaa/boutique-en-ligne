@@ -15,7 +15,7 @@
   <body>
 
 <main>
-<form class="box" action="connexion_traitement" method="post">
+<form class="box" action="../connexion_traitement" method="post">
 
   <h1>Login</h1>
 
