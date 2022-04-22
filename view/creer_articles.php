@@ -9,7 +9,7 @@ $cat = new categories();
 <html>
 
 <head>
-    <title>Creer article</title>
+    <title>Creer Categories</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="#.css" />
 </head>

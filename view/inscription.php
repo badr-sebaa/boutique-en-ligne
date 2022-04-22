@@ -34,9 +34,9 @@
   <input type="password" name="password" placeholder="Retype your Password" required pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
 
   <input type="submit" name="submit" value="Register">
-
+  <a href="connexion.php">already have an acount ?</a>
 </form>
-
+  
 </main>
         
 </body>

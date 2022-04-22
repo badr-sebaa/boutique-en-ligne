@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCHLASS About-Us</title>
   <link rel="stylesheet" href="CSS/apropos.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
 </head>
 <body>
   
-
+<?php require 'navbar.php' ?>
 <!-- Story  -->
 
-<div class="story">
+<div class="story" style="margin-top: 10%;">
   
 <h1> STORY </h1>
 

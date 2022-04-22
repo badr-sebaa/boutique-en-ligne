@@ -1,11 +1,13 @@
 <?php
 session_start(); // Pour récupèrer nos données dans les variables : $_SESSION   
-
 require '../model/config.php';
+//require('pagination1.php');
+
 $req = "SELECT * FROM articles";
 $stmt = $bdd->prepare($req);
 $stmt->execute();
 $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 
@@ -16,9 +18,12 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SCHLASS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fo  nt-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="CSS/boutique.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
 </head>
+<body>
+<?php require 'navbar.php'; ?>
  <h1 class="heading"> 当社製品 </h1>
 <section class="products" id="products">
 
@@ -29,7 +34,7 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- <div class="col-md-4"> -->
         <div class="box">
             <div class="icons">
-                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="../controler/add_panier.php?id_produit=<?php echo $c["id"];?>" class="fas fa-shopping-cart"></a>
                 <a href="#" class="fas fa-eye"></a>
             </div>
             <div class="image">
@@ -49,4 +54,26 @@ $cours = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
    
 </section>
+
+<?php 
+if($_GET["panier_result"] = "good"){ ?>
+
+<script>window.alert("L\'article à bien été ajouter au panier")</script>
+<?php
+}
+elseif($_GET["panier_result"] = "noexistence"){ ?>
+
+<script>window.alert("L\'article n'existe pas")</script>
+
+<?php
+}
+elseif($_GET["panier_result"] = "noproduct"){?>
+
+<script>window.alert("Pas d\'article ")</script>
+
+<?php
+}
+else{$_GET["panier_result"] = "" ;  }
+?>
+</body>
 </html>
