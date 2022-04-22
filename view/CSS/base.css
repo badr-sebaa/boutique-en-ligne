@@ -1,23 +1,29 @@
 *{
 	margin:0 auto;
+	
 	/* cursor: url("https://img.icons8.com/nolan/50/centre-of-gravity.png"), default; */
 	}
 	
 	body {
-	background-image:url('../img/peakpx\ \(2\).jpg');
+	/* background-image:url('../img/peakpx\ \(2\).jpg'); */
+	background-color: #07171f;
 	background-size:100%;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
 	height:100%;
 	width:100%;
+	font-family:'GT-Sectra-Fine-Bold';
+	
 	}
 	
+	/* NAVBAR */
 
 	nav{
 		display: flex;
 		justify-content: flex-end;
 		position: relative;
-		background-color: blue;
+		
+		
 	}
 
 	nav ul{
@@ -30,14 +36,14 @@
 	
 	nav ul li{
 	float: right;
-	margin: 30px;
-	font-size: 15px; 
+	margin: 3.1vh;
+	font-size: 2.2vh; 
 	}
 	
-	nav ul li a:hover{
-	box-shadow: 0 0 20px #64c1f7,
-				0 0 20px #66ffff;
-	}
+	/* nav ul li a:hover{
+	box-shadow: 0 0 50px #64c1f7,
+				0 0 50px #66ffff;
+	} */
 	
 	nav ul li a{
 	color: white;
@@ -59,17 +65,21 @@
 	
 	/* services-items */
 	.services{
-	margin-top:45%;
+	margin-top:100vh;
 	display: flex;
 	justify-content: space-evenly;
+	background-color: #07171f;
+	
 	}
 	.service-items{
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 4%;
-	padding: 30px;
+	margin: 1.5em;
+	padding: 2.3em;
+	
+	
 	}
 	.service-details{
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -77,103 +87,102 @@
 	color: azure;
 	font-weight: 500;
 	text-align: center;
-	font-size: 110%;
+	font-size: 1.5em;
+	font-family:'GT-Sectra-Fine-Bold';
+	}
+
+	.best-items{
+		background-color: #07171f;
 	}
 	
 	
 	/* best sellers */
 	
 	.section-title{
-	font-size: 50px;
+	font-size: 1.9em;
 	color: white;
 	position:relative;
 	padding: 5%;
-	font-family:'Courier New', Courier, monospace;
+	/* font-family:'Courier New', Courier, monospace; */
+	font-family:'GT-Sectra-Fine-Bold';
+	background-color: #07171f;
 	}
 	.section-title::before{
 	content: "";
 	position: absolute;
 	background-color: #4fcbf1;
-	width: 50px;
-	height: 7px;
-	bottom: 10vh;
+	width: 10vh;
+	height: 0.3em;;
+	bottom: 8vh;
 	}
 	/* carousel */
 	
-	.carousel-wrapper{
-	 height: 400px;
-	 position: relative;
-	 width: 800px;
-	 display: block;
-	 margin: 50px auto;
-	 border: 2px solid black;
+	.pic-ctn {
+		width: 110vw;
+		height: 220px;
+		
+	  }
+	  
+	  @keyframes display {
+		0% {
+		  transform: translateX(200px);
+		  opacity: 0;
+		}
+		10% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		20% {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+		30% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+		100% {
+		  transform: translateX(-200px);
+		  opacity: 0;
+		}
+	  }
+	  
+	.pic-ctn {
+	position: relative;
+	width: 100vw;
+	height: 380px;
+	margin-top: 15vh;
+	background-color: #07171f;
 	}
-	.carousel-item {
-	 position: absolute;
-	 top: 0;
-	 bottom: 0;
-	 left: 0;
-	 right: 0;
-	 padding: 25px 50px;
-	 opacity: 0;
-	 transition: all 0.5s ease-in-out;
-	}
-	/* contenu flèches */
-	.arrow{
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 12px;
-	}
-	/* flèche avant */
-	.arrow-prev{
-	 left: 30px;
-	 position: absolute;
-	 top: 50%;
-	 transform: translateY(-50%) rotate(135deg);
-	}
-	/* flèche après */
-	.arrow-next {
-	right: 30px;
+	
+	.pic-ctn > img {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%) rotate(-45deg);
+	top: 0;
+	left: calc(50% - 100px);
+	opacity: 0;
+	animation: display 10s infinite;
+	background-color: #07171f;
 	}
 	
-	[id^= "item"] {
-	display: none;
+	img:nth-child(2) {
+	animation-delay: 2s;
 	}
-	.item-1 {
-	 z-index: 2;
-	 opacity: 1;
-	 background: url('../img/NFT.gif');
-	 background-size: cover;
+	img:nth-child(3) {
+	animation-delay: 4s;
 	}
-	.item-2 {
-	 background: url('../img/NFT2.gif');
-	 background-size: cover;
+	img:nth-child(4) {
+	animation-delay: 6s;
 	}
-	.item-3 {
-	 background: url('../img/NFT3.gif');
-	 background-size: cover;
+	img:nth-child(5) {
+	animation-delay: 8s;
 	}
-	*:target ~ .item-1{
-	  opacity: 0;
-	}
-	#item-1:target ~ .item-1 {
-		opacity: 1;
-	} 
-	#item-2:target ~ .item-2, #item-3:target ~ .item-3{
-		z-index: 3;
-		opacity: 1;
-	}
-	
+
 	/* Nouveautés */
 	
 	/* Grid */
 	
 	.new-nfts{
-		margin:10x;
+		margin:10vh;
+		background-color: #07171f;
 	}
 	
 	.nft-grid{
@@ -185,7 +194,7 @@
 	}
 	
 	.nft-grid1{
-		background-image: url("../img/fond.jpg");
+		background-image: url("../img/scout.JPG");
 		background-repeat: no-repeat;
 		width: 100%;
 		background-size:cover;
@@ -194,7 +203,7 @@
 		
 	}
 	.nft-grid2{
-		background-image: url("../img/fond.jpg");
+		background-image: url("../img/revolver.JPG");
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
@@ -202,46 +211,19 @@
 	
 	}
 	.nft-grid3{
-		background-image: url("../img/fond.jpg");
+		background-image: url("../img/pick.JPG");
 		background-repeat: no-repeat;
 		width: 100%;
 		background-size: cover;
 		grid-column: 3/5;
 	}
-	/* .nft-grid4{
-		background-image: url("/img/R.jpg");
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 110%;
-		background-size: cover;
-		grid-column: 1;
-		grid-row: 3/5;
-	}
-	.nft-grid5{
-		background-image: url("/img/NFT/U.gif");
-		background-repeat: no-repeat;                              
-		background-size: cover;
-		width: 100%;
-		height: 110%;
-		grid-column: 2/4;
-		grid-row: 3/5;
-	}
-	.nft-grid6{
-		background-image: url("/img/K.jpg");
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 110%;
-		background-size: cover;
-		grid-column: 4;
-		grid-row: 3/5;
 	
-	} */
 	
-	.nft-details{
+	/* .nft-details{
 		background-color: #FFFFFFDF;
 		position: absolute;
 		
 		width: 93.3vh;
 	
-	}
+	} */
 	
