@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>SCHLASS | KaibaCorp</title>
 		<meta name="author" content="Kaibacorp" />
 		<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="view/CSS/base.css"/>
 		<link rel="stylesheet" type="text/css" href="view/CSS/demo2.css"/>
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		
 		</head>
 			
      
@@ -35,6 +37,7 @@
 <!-- section service -->
 
 	<section class="services">
+		
 			<div class="service-items">
 				<img src="view/img/encryption.svg" style="width: 60%; padding:5%;margin: 10%">
 					<p class="service-details">Vos payments sont anonyme et intraçable</p>
@@ -55,8 +58,9 @@
 	<section class="best-items">
 			<h2 class="section-title">Newest Collections Added</h2>
 			
+			
 <!-- carousel -->
-			<div class="carousel-wrapper">
+			<!-- <div class="carousel-wrapper">
 				<span id="item-1"></span>
 				<span id="item-2"></span>
 				<span id="item-3"></span>
@@ -72,8 +76,16 @@
 				  		<a href="#item-2" class="arrow-prev arrow"></a>
 				 		<a href="#item-1" class="arrow-next arrow"></a>
 					</div>
-			</div>	  
-	</section>
+			</div>	   -->
+			<div class="pic-ctn">
+    <img src="view/img/pick.JPG" alt="" class="pic">
+    <img src="view/img/revolver.JPG" alt="" class="pic">
+    <img src="view/img/scout.JPG" alt="" class="pic">
+   
+  </div>
+		
+     
+	<!-- </section> -->
 <!-- fin section -->
 
 <!-- section tout les nfts -->
@@ -101,6 +113,9 @@
 	</section>
 
 	<?php include 'view/footer.php'; ?>
+	
+
 	</body>
 </html>
+
 

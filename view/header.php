@@ -10,19 +10,19 @@
         <div>
 			<nav>
                      
-				<ul>
-                    <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="view/inscription.php">SIGN UP</a></li>
-                     <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="view/connexion.php">LOGIN</a></li>
+				<ul> 
+                       <li><a href="view/inscription.php"><img src="https://img.icons8.com/nolan/64/gender-neutral-user.png"/></a></li>
+                       <li><a href="view/afficher_panier.php"><img src="https://img.icons8.com/nolan/64/add-basket.png"/></a></li>
+                       
                     <li><a onmouseover="PlaySound('mySound')" 
                     onmouseout="StopSound('mySound')" href="view/contact.php">CONTACT US</a></li>
                     <li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="apropos.php">ABOUT-US</a></li>	
+                    onmouseout="StopSound('mySound')" href="view/apropos.php">ABOUT-US</a></li>	
                 	<li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">SHOP</a></li>	
+                    onmouseout="StopSound('mySound')" href="view/boutique.php">SHOP</a></li>	
 					<li><a onmouseover="PlaySound('mySound')" 
-                    onmouseout="StopSound('mySound')" href="#">HOME</a></li>
+                    onmouseout="StopSound('mySound')" href="index.php">HOME</a></li>
+                   
 				</ul>
 			</nav>
 		</div>
