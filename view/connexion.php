@@ -15,7 +15,7 @@
   <body>
 
 <main>
-<form class="box" action="connexion_traitement" method="post">
+<form class="box" action="../controler/connexion_traitement.php" method="post">
 
   <h1>Login</h1>
 
@@ -23,11 +23,12 @@
   <input type="email" name="email" placeholder="Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
 
   
-  <input type="password" name="password" placeholder="Password" required pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+  <input type="password" name="password" placeholder="Password" required >
 
 
   <input type="submit" name="submit" value="Login">
 
+  <a href="inscription.php">you don't have an acount ?</a>
 </form>
 
 </main>

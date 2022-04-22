@@ -22,7 +22,7 @@ class Users
     public function register($walet, $lastname, $firstname, $email, $email_verify, $password, $password_verify)
     {
         if($email === $email_verify){
-            require('config.php');
+            require('../model/config.php');
             $check = $bdd->prepare('SELECT * FROM users WHERE email = ?');
             $check->execute(array($email));
             $data = $check->fetch();
@@ -45,7 +45,7 @@ class Users
     public function connect($email, $password)
     {
 
-        require('config.php');
+        require('../model/config.php');
 
         $stmt = $bdd->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute(array($email));
@@ -84,13 +84,13 @@ class Users
     {
         session_start();
         session_destroy();
-        echo 'Déconnecter';
+        header('location: ../index.php');
     }
 
     // Supprime ET déconnecte un user
     public function delete($email)
     {
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("DELETE FROM `users` WHERE `email`=?");
         $stmt->execute(array($email));
         
@@ -100,7 +100,7 @@ class Users
     public function update($walet, $lastname,  $firstname,  $email, $password)
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("UPDATE users SET walet=?, password =?,  email =?, firstname = ?, lastname = ? WHERE id = ?");
         $stmt->execute(array($walet,$email,$firstname,$lastname,$loged_id));
         echo 'Modifier';
@@ -124,7 +124,7 @@ class Users
     public function getAllInfos()
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute(array($loged_id));
         $req = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -145,7 +145,7 @@ class Users
     public function getwalet()
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("SELECT walet FROM users WHERE id = ?");
         $stmt->execute(array($loged_id));
         $req = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -159,7 +159,7 @@ class Users
     public function getEmail()
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("SELECT email FROM users WHERE id = ?");
         $stmt->execute(array($loged_id));
         $req = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -173,7 +173,7 @@ class Users
     public function getFirstname()
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("SELECT firstname FROM users WHERE id = ?");
         $stmt->execute(array($loged_id));
         $req = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -187,7 +187,7 @@ class Users
     public function getLastname()
     {
         $loged_id = $_SESSION['id'];
-        require('config.php');
+        require('../model/config.php');
         $stmt = $bdd->prepare("SELECT lastname FROM users WHERE id = ?");
         $stmt->execute(array($loged_id));
         $req = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -200,7 +200,7 @@ class Users
 
     public function IsUser($email)
     {
-        require('config.php');
+        require('../model/config.php');
         $check = $bdd->prepare('SELECT * FROM users WHERE email = ?');
         $check->execute(array($email));
         $data = $check->fetch();

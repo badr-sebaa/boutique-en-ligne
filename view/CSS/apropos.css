@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Sumana:wght@700&display=swap");
 body {
   align-items: center;
-  background-image: url(../img/peakpx\ \(2\).jpg);
+  background-color: black;
   display: flex;
   font-family: "Merriweather", serif;
   flex-wrap: wrap;
